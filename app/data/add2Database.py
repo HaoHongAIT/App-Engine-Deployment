@@ -1,7 +1,6 @@
 from app.models import *
 from app import db, app
 import pandas as pd
-import hashlib
 
 
 def add_Category(file_path):
@@ -21,14 +20,11 @@ def add_News(file_path):
                             content=news['content'][i], ))
 
 
-
-
-
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-        add_Category(r'categories.csv')
-        add_News(r'rice.csv')
-        add_News(r'coffee.csv')
+        add_Category(r'./csv/categories.csv')
+        add_News(r'./csv/rice.csv')
+        add_News(r'./csv/coffee.csv')
         db.session.commit()
     print('Add data successfully')

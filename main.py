@@ -1,8 +1,7 @@
 import math
-
 from flask import request, render_template
-
-from app import utils, preprocessing, app, phobert_model
+from app import utils, app
+from app.analysis import Analysis
 
 
 @app.context_processor
@@ -40,11 +39,10 @@ def read():
 def analysis():
     if request.method.__eq__('POST'):
         news_sentence = f"{request.form['headline']} {request.form['brief']}"  # Get review from input
-        news_sentence = preprocessing.pipeline(news_sentence)
-        predict_results = phobert_model.predict(news_sentence)
-        final_output = preprocessing.output(predict_results[0])
+        model = Analysis(api_key="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")
+        final_output = model.get_response(news_sentence)
         return render_template("analysis.html",
-                               predict=final_output['results'])
+                               predict=final_output)
     else:
         return render_template("analysis.html")
 

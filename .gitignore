@@ -1,9 +1,8 @@
 .gcloudignore
 .git
 .gitignore
-crawler/chromedriver.exe
-train/weights/model.pt
-app/weights/model.pt
+README.md
+venv
 */.idea
 */__pycache__
 venv/

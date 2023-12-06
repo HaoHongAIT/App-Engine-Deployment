@@ -1,12 +1,11 @@
-runtime: custom
-env: flex
+runtime: python311
 
 entrypoint: gunicorn -t 0 -b :$PORT app:app
 
 #env_variables:
 #  CLOUD_SQL_USERNAME: root
 #  CLOUD_SQL_PASSWORD: root
-#  CLOUD_SQL_DATABASE_NAME: news
+#  CLOUD_SQL_DATABASE_NAME: newsdb
 #  CLOUD_SQL_CONNECTION_NAME: long-equinox-405504:asia-east1:cloudmysql
 
 #handlers:

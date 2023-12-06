@@ -25,55 +25,16 @@
                 </div>
                 <div class="col-lg-6">
                     <table class="table">
-                        {% if predict %}
                         <tr>
-                            <th>Loại:</th>
-                            <td>{{predict.category}}</td>
+                            <th>Kết Quả Phân Tích</th>
                         </tr>
+                       {% if predict %}
                         <tr>
-                            <th>Giá:</th>
-                            <td>{{predict.price}}</td>
-                        </tr>
-                        <tr>
-                            <th>Thị trường:</th>
-                            <td>{{predict.market}}</td>
-                        </tr>
-                        <tr>
-                            <th>Chính sách:</th>
-                            <td>{{predict.polices}}</td>
-                        </tr>
-                        <tr>
-                            <th>Nội Tại:</th>
-                            <td>{{predict.internal}}</td>
-                        </tr>
-                        <tr>
-                            <th>Ngoại Vi:</th>
-                            <td>{{predict.external}}</td>
-                        </tr>
+                            <td>{{ predict }}</td>
+                       </tr>
                        {% else %}
                        <tr>
-                            <th>Loại Nông Sản:</th>
                             <td>Chưa có thông tin</td>
-                       </tr>
-                       <tr>
-                           <th>Giá Nông Sản:</th>
-                           <td>Chưa có thông tin</td>
-                       </tr>
-                       <tr>
-                           <th>Nông Sản:</th>
-                           <td>Chưa có thông tin</td>
-                       </tr>
-                       <tr>
-                           <th>Thị Trường:</th>
-                           <td>Chưa có thông tin</td>
-                       </tr>
-                       <tr>
-                           <th>Nội Tại:</th>
-                           <td>Chưa có thông tin</td>
-                       </tr>
-                       <tr>
-                           <th>Ngoại Vi:</th>
-                           <td>Chưa có thông tin</td>
                        </tr>
                        {% endif %}
                     </table >

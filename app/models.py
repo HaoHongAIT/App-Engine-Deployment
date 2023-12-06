@@ -1,9 +1,6 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, Text
 from sqlalchemy.orm import relationship
-
-from app import *
-# from main import app
-
+from app import db
 
 
 class BaseModel(db.Model):
