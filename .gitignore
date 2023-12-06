@@ -1,2 +1,9 @@
-# Google App Engine generated folder
-appengine-generated/
+.gcloudignore
+.git
+.gitignore
+crawler/chromedriver.exe
+train/weights/model.pt
+app/weights/model.pt
+*/.idea
+*/__pycache__
+venv/
