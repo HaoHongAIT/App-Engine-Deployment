@@ -1,4 +1,3 @@
-import numpy as np
 from app import app
 from app.models import *
 
