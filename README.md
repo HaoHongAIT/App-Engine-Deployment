@@ -1,2 +1,0 @@
-SQLAlchemy==2.0.23
-pymysql==1.1.0
