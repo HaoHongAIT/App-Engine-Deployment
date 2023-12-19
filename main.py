@@ -96,7 +96,7 @@ def analysis():
 
     if request.method.__eq__('POST'):
         news_sentence = f"{request.form['headline']} {request.form['brief']}"  # Get review from input
-        model = Analysis(api_key="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")
+        model = Analysis(api_key="YOUR API KEY")
         final_output = model.get_response(news_sentence)
         return render_template("analysis.html",
                                predict=final_output)
