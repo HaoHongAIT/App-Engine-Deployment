@@ -17,8 +17,8 @@ class Analysis:
         return response.choices[0].text
 
 
-if __name__ == '__main__':
-    model = Analysis()
-    user_question = "xin chào "
-    response_text = model.get_response(user_question)
-    print(response_text)
+# if __name__ == '__main__':
+#     model = Analysis()
+#     user_question = "xin chào "
+#     response_text = model.get_response(user_question)
+#     print(response_text)

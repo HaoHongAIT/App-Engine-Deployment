@@ -1,5 +1,7 @@
-from app import app
-from app.models import *
+import numpy as np
+from app import app, db
+from app.models import News, Category, User
+import hashlib
 
 
 def load_categories():
@@ -26,3 +28,35 @@ def load_news(category_id, keyword=None, page=1):
     return news.slice(start, end).all()
 
 
+def pred_to_label(outputs_classifier, outputs_regressor):
+    result = np.zeros((outputs_classifier.shape[0], 6))
+    mask = (outputs_classifier >= 0.5)
+    result[mask] = outputs_regressor[mask]
+    return result
+
+
+def add_user(name, username, password, **kwargs):
+    """adds a new user to the database.
+    """
+    password = str(hashlib.md5(password.encode('utf-8')).hexdigest())
+    user = User(name=name, username=username, password=password, email=kwargs.get('email'))
+    db.session.add(user)
+    try:
+        db.session.commit()
+    except:
+        return False
+    else:
+        return True
+
+
+def check_login(username, password):
+    """checks whether the given username and password match a user in the database.
+    """
+    if username and password:
+        password = str(hashlib.md5(password.strip().encode('utf8')).hexdigest())
+        return User.query.filter(User.username.__eq__(username.strip()),
+                                 User.password.__eq__(password)).first()
+
+
+def get_user_by_id(user_id):
+    return User.query.get(user_id)

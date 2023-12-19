@@ -4,4 +4,4 @@ env_variables:
   CLOUD_SQL_USERNAME: root
   CLOUD_SQL_PASSWORD: root
   CLOUD_SQL_DATABASE_NAME: newsdb
-  CLOUD_SQL_CONNECTION_NAME: cloud-sql-407317:asia-east1:cloudmysql
+  CLOUD_SQL_CONNECTION_NAME: delpoy-webapp:asia-east1:cloudsql
